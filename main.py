@@ -3,7 +3,6 @@
 import csv
 import os
 import sys
-from unittest import result
 
 INPUT_CSV_FILE = "sales.csv"
 OUTPUT_CSV_FILE = "report.csv"
