@@ -11,10 +11,10 @@ Generates a synthetic sales dataset, then processes it into a per-product revenu
 
 ```bash
 # 1. Generate the sales data
-python generate_data.py
+python3 generate_data.py
 
 # 2. Run the report pipeline
-python main.py
+python3 main.py
 ```
 
 ## Output
