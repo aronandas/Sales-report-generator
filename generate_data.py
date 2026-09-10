@@ -8,7 +8,7 @@ products = ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset']
 regions = ['North', 'South', 'East', 'West']
 
 total_rows = 100000
-bad_rows_target = 489
+bad_rows_target = 50000
 
 # Pre-determine unique row indices to inject with bad data
 bad_row_indices = set(random.sample(range(total_rows), bad_rows_target))

@@ -31,7 +31,7 @@ def load_products():
 
 def validate_row(row):
     """Returns None if the row is usable, otherwise a reason string for errors.log."""
-    if not row["product"]:
+    if not row["product"]: #Python treats empty strings as false
         return "missing product name"
 
     quantity_raw = row["quantity"]
@@ -40,7 +40,7 @@ def validate_row(row):
     try:
         quantity = int(quantity_raw)
     except ValueError:
-        return f"non-numeric quantity ({quantity_raw})"
+        return f"non-numeric quantity ({quantity_raw})" #f-string — the part is evaluated and interpolated into the string at runtime
     if quantity < 0:
         return f"negative quantity ({quantity})"
 
@@ -75,7 +75,7 @@ def process_sales(input_path, error_log_path):
         # regardless of file size (matters for the 100k-row input).
         for row in reader:
             total_rows += 1
-
+            
             # Must validate before int()/float() conversion below, since a bad row
             # (empty or non-numeric quantity/price) would otherwise raise and crash the run.
             skip_reason = validate_row(row)
